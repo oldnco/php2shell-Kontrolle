@@ -1,0 +1,3 @@
+# Eine Webseite pro Zeile. Eigene Domains hier eintragen.
+example.com
+https://www.example.com/
