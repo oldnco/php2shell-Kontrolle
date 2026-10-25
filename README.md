@@ -53,6 +53,18 @@ Das Skript liest ausschließlich die HTTP-Header `Server` und `X-Powered-By`. Es
 
 Die Grenzwerte wurden aus [openai/php2shell-checker](https://github.com/openai/php2shell-checker) übernommen. [assetnote/php2shell-scanner](https://github.com/assetnote/php2shell-scanner) diente als Orientierung für die Zielpruefung. Dessen aktive, speicherintensive Testanfragen sind hier bewusst nicht enthalten; beide Werkzeuge liefern deshalb unterschiedliche Arten von Aussagen.
 
+### Beispielausgabe
+
+Die Ausgabe folgt immer dem Format `STATUS | WEBSEITE | HINWEIS`. Die folgenden Zeilen sind schematische Beispiele; die `.example`-Adressen sind keine realen Prüfziele.
+
+```text
+OK | aktuell.example | PHP 8.4.27 in HTTP-Headern gefunden (HTTP 200).
+MÖGLICHERWEISE BETROFFEN | veraltet.example | PHP 8.1.34 in HTTP-Headern gefunden (HTTP 200).
+UNBEKANNT | ohne-header.example | Keine PHP-Version in Server/X-Powered-By gefunden (HTTP 200).
+```
+
+`OK` bedeutet, dass der gemeldete Patchstand über dem hinterlegten Grenzwert liegt. `MÖGLICHERWEISE BETROFFEN` weist auf einen Patchstand am oder unter dem Grenzwert hin. `UNBEKANNT` bedeutet, dass keine eindeutig bewertbare PHP-Version erkannt wurde. Die Ausgabe allein beweist keine Ausnutzbarkeit.
+
 ## Dateien auf GitHub hochladen
 
 1. Auf GitHub ein neues Repository erstellen.
