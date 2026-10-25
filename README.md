@@ -19,7 +19,7 @@ Ein kleines Skript für Windows. **Node.js und eine lokale PHP-Installation sind
 
 `example.com` durch die eigene Domain ersetzen. Das Skript ergänzt `https://`, wenn nur ein Domainname angegeben wird.
 
-Falls bereits PowerShell 7 verwendet wird, kann derselbe Befehl mit `pwsh` statt `powershell.exe` ausgefuehrt werden.
+Falls bereits PowerShell 7 verwendet wird, kann derselbe Befehl mit `pwsh` statt `powershell.exe` ausgeführt werden.
 
 ## Mehrere Webseiten prüfen
 
@@ -49,7 +49,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\php2shell-pruefen.ps1
 | `OK` | Ein gemeldeter stabiler PHP-Patchstand liegt über dem Grenzwert. |
 | `UNBEKANNT` | Keine PHP-Version sichtbar, Version nicht gelistet, Vorabversion oder Anfrage fehlgeschlagen. |
 
-Das Skript liest ausschließlich die HTTP-Header `Server` und `X-Powered-By`. Es sendet zuerst `HEAD` und nur bei HTTP 405 oder 501 anschließend `GET`. Weiterleitungen werden nicht verfolgt. Es sendet **keine Exploit-Anfragen**. Versteckte Header liefern `UNBEKANNT`; das ist kein Beweis für eine sichere oder unsichere Seite. Ein Versionsvergleich beweist ebenfalls keine Ausnutzbarkeit, da Anbieter Sicherheitskorrekturen auf ältere Versionsnummern zurueckportieren können.
+Das Skript liest ausschließlich die HTTP-Header `Server` und `X-Powered-By`. Es sendet zuerst `HEAD` und nur bei HTTP 405 oder 501 anschließend `GET`. Weiterleitungen werden nicht verfolgt. Es sendet **keine Exploit-Anfragen**. Versteckte Header liefern `UNBEKANNT`; das ist kein Beweis für eine sichere oder unsichere Seite. Ein Versionsvergleich beweist ebenfalls keine Ausnutzbarkeit, da Anbieter Sicherheitskorrekturen auf ältere Versionsnummern zurückportieren können.
 
 Die Grenzwerte wurden aus [openai/php2shell-checker](https://github.com/openai/php2shell-checker) übernommen. [assetnote/php2shell-scanner](https://github.com/assetnote/php2shell-scanner) diente als Orientierung für die Zielpruefung. Dessen aktive, speicherintensive Testanfragen sind hier bewusst nicht enthalten; beide Werkzeuge liefern deshalb unterschiedliche Arten von Aussagen.
 
